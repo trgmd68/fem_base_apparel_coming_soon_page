@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  --clr-DesaturatedRed: hsl(0, 36%, 70%);
+  --clr-SoftRed: hsl(0, 93%, 68%);
+  --clr-DarkGrayishRed: hsl(0, 6%, 24%);
+
+  --gradient1: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --gradient2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+
+  --ff: "Josefin Sans", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+
+  --fs-200: 0.8125rem;
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-700: 2.5rem;
+  --fs-900: 4rem;
+
+  --padding: calc(8px + 1.5625vw);
+}
+
+body {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: linear-gradient(var(--gradient1));
+  color: var(--clr-DesaturatedRed);
+  font-family: var(--ff);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-regular);
+  /* padding-block: 2em 2em; */
+  padding-block: calc(2 * var(--padding));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  /* padding-inline: 2em; */
+  padding-inline: calc(2 * var(--padding));
+}
+
+.logo {
+  /* margin-bottom: 2em; */
+  margin-bottom: calc(2 * var(--padding));
+}
+
+.logo_img {
+  width: 100px;
+}
+
+.hero {
+  margin-bottom: calc(4 * var(--padding));
+  /* background-image: url(../images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; */
+}
+
+.hero__img-mobile {
+  margin: 0 auto;
+}
+
+.hero__img-desktop {
+  display: none;
+}
+
+h1,
+span {
+  font-size: var(--fs-700);
+  text-transform: uppercase;
+  line-height: 42px;
+  letter-spacing: 11px;
+}
+
+span {
+  font-weight: var(--fw-light);
+  color: var(--clr-DesaturatedRed);
+  display: block;
+}
+
+h1 {
+  font-weight: var(--fw-semibold);
+  color: var(--clr-DarkGrayishRed);
+  /* margin-bottom: 1rem; */
+  margin-bottom: var(--padding);
+}
+
+.main-txt {
+  line-height: 22px;
+  /* margin-bottom: 2rem; */
+  margin-bottom: calc(2 * var(--padding));
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--clr-DesaturatedRed);
+  border-radius: 24px;
+  /* padding-left: 1rem; */
+  padding-left: var(--padding);
+}
+
+form {
+  position: relative;
+}
+
+input::placeholder {
+  color: var(--clr-DesaturatedRed);
+  font: inherit;
+}
+
+.btn {
+  width: 64px;
+  height: 48px;
+  padding: 12px;
+  line-height: 48px;
+  background-image: linear-gradient(var(--gradient2));
+  border-radius: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn img {
+  margin: 0 auto;
+}
+
+.error {
+  text-align: left;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+  line-height: 28px;
+  color: var(--clr-SoftRed);
+  /* margin-left: 2em; */
+  margin-left: calc(2 * var(--padding));
+  margin-top: 4px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 50rem) {
+  body {
+    max-width: 1440px;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    padding-block: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 610px;
+    grid-template-rows: 244px auto;
+  }
+
+  .container {
+    padding-inline: 165px 220px;
+  }
+
+  .logo {
+    grid-area: 1/1/2/2;
+    margin-top: 75px;
+    /* margin-bottom: 136px; */
+    margin-bottom: 0;
+  }
+
+  .logo_img {
+    width: 158px;
+  }
+
+  .hero {
+    grid-area: 1/2/-1/-1;
+    /* background-image: url(../images/hero-desktop.jpg); */
+  }
+
+  .hero__img-mobile {
+    display: none;
+  }
+
+  .hero__img-desktop {
+    display: block;
+  }
+
+  .content {
+    grid-area: 2/1/-1/2;
+  }
+
+  h1,
+  span {
+    font-size: var(--fs-900);
+    line-height: 64px;
+    letter-spacing: 17px;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 28px;
+    margin-bottom: 2.5rem;
+  }
+}
